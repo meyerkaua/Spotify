@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="playlist-header">
+    <img src="Capas/playlist_capa.png" alt="Capa Playlist" class="playlist-cover">
+    <h1 class="playlist-title">Rock</h1>
+
+    <div class="playlist-controls">
+      <button id="play-all">▶</button>
+      <button id="shuffle">Aleatório</button>
+    </div>
+  </header>
+
+  <table class="song-table">
+    <tbody>
+      <tr class="song" data-src="Músicas/Back_In_Black.mp3">
+        <td>1</td>
+        <td class="song-details">
+          <img src="Capas/Back_In_Black.png" alt="Capa">
+          <div>
+            <strong>Back In Black</strong><br>
+            <span title="artista">AC/DC</span>
+          </div>
+        </td>
+        <td>
+          <button class="play-btn">▶</button>
+          <button class="queue-btn">+</button>
+        </td>
+      </tr>
+
+      <tr class="song" data-src="Músicas/Highway_to_Hell.mp3">
+        <td>2</td>
+        <td class="song-details">
+          <img src="Capas/Highway_to_Hell.png" alt="Capa">
+          <div>
+            <strong>Highway to Hell</strong><br>
+            <span title="artista">AC/DC</span>
+          </div>
+        </td>
+        <td>
+          <button class="play-btn">▶</button>
+          <button class="queue-btn">+</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Mini player -->
+  <div id="mini-player" class="hidden">
+    <img id="mini-cover" src="" alt="Capa">
+    <div class="mini-info">
+      <h4 id="mini-title"><span>Título</span></h4>
+      <p id="mini-artist">Artista</p>
+      <div class="mini-time">
+        <span id="mini-current">0:00</span>
+        <span id="mini-total">0:00</span>
+      </div>
+    </div>
+    <input type="range" id="mini-progress" value="0" max="100">
+    <div class="mini-controls">
+      <button id="mini-prev">⏮</button>
+      <button id="mini-play">▶</button>
+      <button id="mini-next">⏭</button>
+    </div>
+    
+  </div>
+
+  <!-- Botão fila -->
+  <button id="open-queue" class="queue-toggle-btn">Ver Fila</button>
+
+  <!-- Fila de reprodução -->
+  <div id="queue-container">
+    <button id="close-queue" class="close-btn">✖ Fechar</button>
+    <h3>Fila de Reprodução</h3>
+    <ul id="queue-list"></ul>
+  </div>
+
+  <!-- Fullscreen player -->
+  <div id="fullscreen-player" class="hidden">
+    <button id="close-fullscreen" class="close-btn">✖</button>
+    <div class="fs-album">
+      <img id="fs-cover" src="" alt="Capa Grande">
+    </div>
+    <div class="fs-info">
+      <h2 id="fs-title">Nome da Música</h2>
+      <p id="fs-artist">Nome da Banda</p>
+    </div>
+    <div class="progress-container">
+      <span id="current-time">0:00</span>
+      <input type="range" id="progress" value="0" max="100">
+      <span id="total-time">0:00</span>
+    </div>
+    <div class="fs-controls">
+      <button id="prev">⏮</button>
+      <button id="fs-play">▶</button>
+      <button id="next">⏭</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
